@@ -78,6 +78,8 @@ TEMPLATES = [
     },
 ]
 
+CRISPY_TEMPLATES_PACK = "bootstrap4"
+
 WSGI_APPLICATION = "data_scale.wsgi.application"
 
 
