@@ -38,14 +38,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # allauth apps
-    "django.contrib.auth",
-    "django.contrib.messages",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     # crispy forms
     "crispy_forms",
+    # main applications
+    "accounts",
 ]
 
 SITE_ID = 1
