@@ -1,0 +1,50 @@
+from django.db import models
+
+# Create your models here.
+from django.contrib.auth.models import User
+from .choices import (
+    gender_choice,
+    user_choice,
+    nationality_choice,
+    religion_choice,
+    user_bloodgroup_choice,
+)
+from phone_field import PhoneField
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=45, null=True)
+    Age = models.PositiveIntegerField(null=True)
+    phone_number = PhoneField(null=True, help_text="Enter Your Contact Number")
+    user_type = models.CharField(max_length=16, choices=user_choice, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class personal_information(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=128)
+    bloodgroup = models.CharField(
+        choices=user_bloodgroup_choice, max_length=12, null=True
+    )
+    date_of_birth = models.DateField(null=True)
+    gender = models.CharField(max_length=10, choices=gender_choice, null=True)
+    father_name = models.CharField(max_length=128, null=True)
+    father_occupation = models.CharField(max_length=128, null=True)
+    mother_name = models.CharField(max_length=128, null=True)
+    mother_occupation = models.CharField(max_length=128, null=True)
+    religion = models.CharField(max_length=20, null=True, choices=religion_choice)
+    nationality = models.CharField(max_length=20, null=True, choices=nationality_choice)
+
+
+class Address(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Door_Number = models.CharField(max_length=150)
+    Street = models.CharField(max_length=150)
+    Address_Line_1 = models.CharField(max_length=150)
+    Address_line_2 = models.CharField(max_length=150)
+    Land_Mark = models.CharField(max_length=150)
+    Pincode = models.CharField(max_length=150)
+
