@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     # crispy forms
     "crispy_forms",
+    # localflavor
+    "localflavor",
+    # phone field
+    "phone_field",
     # main applications
     "accounts",
 ]
