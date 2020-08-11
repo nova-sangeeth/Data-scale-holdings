@@ -31,3 +31,13 @@ user_bloodgroup_choice = (
     ("b-", "B-"),
     ("ab-", "AB-"),
 )
+education_choice = (
+    ("Bachelors", "Bachelors"),
+    ("Masters/Post-Graduation", "Masters/Post-Graduation"),
+    ("10th", "10th"),
+    ("12th", "12th"),
+)
+course_type_choices = (
+    ("full_Time", "full_time"),
+    ("part_time", "part_time"),
+)
