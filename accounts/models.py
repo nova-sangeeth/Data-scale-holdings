@@ -8,6 +8,8 @@ from .choices import (
     nationality_choice,
     religion_choice,
     user_bloodgroup_choice,
+    education_choice,
+    course_type_choices,
 )
 from phone_field import PhoneField
 
@@ -47,4 +49,17 @@ class Address(models.Model):
     Address_line_2 = models.CharField(max_length=150)
     Land_Mark = models.CharField(max_length=150)
     Pincode = models.CharField(max_length=150)
+
+
+class educational_information(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    education = models.CharField(null=True, max_length=64, choices=education_choice)
+    course = models.CharField(null=True, max_length=64)
+    specialization = models.CharField(null=True, max_length=64)
+    university_or_institute = models.CharField(null=True, max_length=64)
+    course_type = models.CharField(
+        null=True, max_length=64, choices=course_type_choices
+    )
+    Date_of_passing_out = models.DateField(null=True)
+    percentage_or_grade_accquired = models.CharField(null=True, max_length=64)
 
