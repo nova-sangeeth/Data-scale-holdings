@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 
 
 def profile(request):
-    profile = UserProfile.objects.get(id=request.user.id)
+    profile = UserProfile.objects.filter(user=request.user)
     return render(request, "profile.html", {"profile": profile})
 
 
@@ -52,7 +52,7 @@ def registration(request):
 
     return render(
         request,
-        "profile.html",
+        "profile_reg.html",
         {"form_1": form_1, "form_2": form_2, "form_3": form_3, "form_4": form_4,},
     )
 
