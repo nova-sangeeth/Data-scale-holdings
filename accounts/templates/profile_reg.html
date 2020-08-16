@@ -16,11 +16,11 @@
     <h1>forms test.</h1>
     <form method="POST">
         {% csrf_token %}
-        {{form_1.as_p}}
-        {{form_2.as_p}}
-        {{form_3.as_p}}
-        {{form_4.as_p}}
-        <button type="submit">Submit</button>
+        {{form_1 | crispy}}
+        {{form_2 | crispy}}
+        {{form_3 | crispy}}
+        {{form_4 | crispy}}
+        <button type="submit" style="border-radius: 10px; background-color: blueviolet;">Submit</button>
     </form>
 
 </body>
