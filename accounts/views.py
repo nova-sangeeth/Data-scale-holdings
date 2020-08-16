@@ -44,13 +44,12 @@ def registration(request):
             and form_2.is_valid()
             and form_3.is_valid()
             and form_4.is_valid()
-            and form_5.is_valid()
         ):
             form_1.save()
             form_2.save()
             form_3.save()
             form_4.save()
-            form_5.save()
+
     return render(
         request,
         "profile.html",
