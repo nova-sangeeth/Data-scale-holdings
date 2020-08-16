@@ -26,7 +26,7 @@ class UserProfile(models.Model):
 
 
 class personal_information(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     bloodgroup = models.CharField(
         choices=user_bloodgroup_choice, max_length=12, null=True
