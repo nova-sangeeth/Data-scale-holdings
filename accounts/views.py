@@ -28,16 +28,11 @@ def update_profile(request):
 
 
 def registration(request):
-    form_1 = UserProfileForm(request.POST)
-    form_2 = educational_info_form(request.POST)
-    form_3 = User_address_form(request.POST)
-    form_4 = Personal_details_form(request.POST)
-    if request.method == "POST":
-        user = User.objects.get(user=request.user)
-        profile = UserProfile(user=user)
-        education = educational_information(user=user)
-        address = Address(user=user)
-        personal = personal_information(user=user)
+    user = User.objects.get(username=request.user.username)
+    profile = UserProfile(user=user)
+    education = educational_information(user=user)
+    address = Address(user=user)
+    personal = personal_information(user=user)
     form_1 = UserProfileForm(request.POST or None, instance=profile)
     form_2 = educational_info_form(request.POST or None, instance=education)
     form_3 = User_address_form(request.POST or None, instance=address)
