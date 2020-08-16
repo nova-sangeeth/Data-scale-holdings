@@ -38,10 +38,12 @@ def registration(request):
         education = educational_information(user=user)
         address = Address(user=user)
         personal = personal_information(user=user)
-        form_1 = UserProfileForm(request.POST)
-        form_2 = educational_info_form(request.POST)
-        form_3 = User_address_form(request.POST)
-        form_4 = Personal_details_form(request.POST)
+    form_1 = UserProfileForm(request.POST or None, instance=profile)
+    form_2 = educational_info_form(request.POST or None, instance=education)
+    form_3 = User_address_form(request.POST or None, instance=address)
+    form_4 = Personal_details_form(request.POST or None, instance=personal)
+    if request.method == "POST":
+
         if (
             form_1.is_valid()
             and form_2.is_valid()
