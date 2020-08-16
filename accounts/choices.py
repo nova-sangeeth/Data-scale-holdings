@@ -41,3 +41,8 @@ course_type_choices = (
     ("full_Time", "full_time"),
     ("part_time", "part_time"),
 )
+address_type = (
+    ("residential", "residential"),
+    ("work", "work"),
+)
+
