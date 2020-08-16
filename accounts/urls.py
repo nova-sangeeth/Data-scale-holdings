@@ -1,9 +1,10 @@
 from django.conf.urls import url, include
 
-from . import views
+from .views import registration, profile
 
 app_name = "accounts"
 
 urlpatterns = [
-    url(r"^$", views.registration, name="registration"),
+    url(r"^profile_reg$", registration, name="registration"),
+    url(r"^$", profile, name="profile"),
 ]
