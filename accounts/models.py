@@ -10,6 +10,7 @@ from .choices import (
     user_bloodgroup_choice,
     education_choice,
     course_type_choices,
+    address_type,
 )
 from phone_field import PhoneField
 
@@ -43,6 +44,7 @@ class personal_information(models.Model):
 
 class Address(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    Address_Type = models.CharField(choices=address_type, null=True, max_length=64)
     Door_Number = models.CharField(max_length=150)
     Street = models.CharField(max_length=150)
     Address_Line_1 = models.CharField(max_length=150)
