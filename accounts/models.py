@@ -41,6 +41,9 @@ class personal_information(models.Model):
     religion = models.CharField(max_length=20, null=True, choices=religion_choice)
     nationality = models.CharField(max_length=20, null=True, choices=nationality_choice)
 
+    def __str__(self):
+        return self.user
+
 
 class Address(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -51,6 +54,9 @@ class Address(models.Model):
     Address_line_2 = models.CharField(max_length=150)
     Land_Mark = models.CharField(max_length=150)
     Pincode = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.user
 
 
 class educational_information(models.Model):
@@ -64,4 +70,7 @@ class educational_information(models.Model):
     )
     Date_of_passing_out = models.DateField(null=True)
     percentage_or_grade_accquired = models.CharField(null=True, max_length=64)
+
+    def __str__(self):
+        return self.user
 
