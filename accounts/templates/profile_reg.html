@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Registration Page.</title>
+</head>
+
+<body>
+    <h1>{{ user.username }}</h1>
+    <h1>forms test.</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form_1.as_p}}
+        {{form_2.as_p}}
+        {{form_3.as_p}}
+        {{form_4.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
