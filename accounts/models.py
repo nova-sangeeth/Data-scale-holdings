@@ -42,7 +42,7 @@ class personal_information(models.Model):
 
 
 class Address(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     Door_Number = models.CharField(max_length=150)
     Street = models.CharField(max_length=150)
     Address_Line_1 = models.CharField(max_length=150)
@@ -52,7 +52,7 @@ class Address(models.Model):
 
 
 class educational_information(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     education = models.CharField(null=True, max_length=64, choices=education_choice)
     course = models.CharField(null=True, max_length=64)
     specialization = models.CharField(null=True, max_length=64)
