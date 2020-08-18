@@ -56,7 +56,7 @@ class Address(models.Model):
     Pincode = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
 
 class educational_information(models.Model):
