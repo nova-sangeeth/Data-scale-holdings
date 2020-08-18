@@ -72,5 +72,5 @@ class educational_information(models.Model):
     percentage_or_grade_accquired = models.CharField(null=True, max_length=64)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
