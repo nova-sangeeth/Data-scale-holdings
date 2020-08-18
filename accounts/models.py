@@ -42,7 +42,7 @@ class personal_information(models.Model):
     nationality = models.CharField(max_length=20, null=True, choices=nationality_choice)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
 
 class Address(models.Model):
