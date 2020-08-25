@@ -8,11 +8,17 @@
 </head>
 
 <body>
+    {% if user.is_authenticated %}
     {% for u in profile %}
     <p>username{{ u.name }}</p>
     <p>user age{{ u.Age }}</p>
     {% endfor %}
     <a href="/profile_reg">Registration.</a>
+    {% else %}
+    <h1>
+        Hello there This is the DataScale Holdings testout project using django and Sql
+    </h1>
+    {% endif %}
 </body>
 
 </html>
