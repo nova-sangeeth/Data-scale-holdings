@@ -12,6 +12,10 @@ from .forms import (
 from django.contrib.auth.models import User
 
 
+def index(request):
+    return render(request, "index.html")
+
+
 def profile(request):
     profile = UserProfile.objects.filter(user=request.user)
     return render(request, "profile.html", {"profile": profile})
@@ -23,7 +27,7 @@ def update_profile(request):
     if request.method == "POST":
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
-            forms.save()
+            form.save()
     return render(request, "update_profile.html", {"form": form})
 
 
